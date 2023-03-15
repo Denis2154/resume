@@ -1,0 +1,104 @@
+<div>
+  <h1>Мови програмування список :</h1>
+  {{#with web}}
+    <ul>
+      {{#each languages}}
+        <li>
+          <h2>{{name}}</h2>
+
+          <b>Version :</b>
+          {{version}}
+          <br />
+          <b>Description :</b>
+          <em>{{description}}</em>
+          <hr />
+
+        </li>
+
+        <br />
+        <br />
+
+        <ul>
+          {{#each elements}}
+            <h3>Elements :</h3>
+            <li><b>Name :</b> {{name}}</li>
+            <br />
+            <b>Description :</b>
+            <em>{{description}}</em>
+
+            <br />
+            <br />
+
+            <ul>
+              {{#each attributes}}
+                <b>Attributes :</b>
+                <br />
+                <br />
+                <li>
+                  {{name}}
+                  <br />
+                  <b>Description :</b>
+                  <em>{{description}}</em>
+                </li>
+              {{/each}}
+            </ul>
+            <hr />
+          {{/each}}
+        </ul>
+
+        <ul>
+          {{#each properties}}
+            <b>Properties :</b>
+            <br />
+            <br />
+            <li><b>Name :</b> {{name}}</li>
+            <b>Description :</b>
+            <em>{{description}}</em>
+            <br />
+            <b>Values :</b>
+            <ul>
+              {{#each values}}
+                <li>{{value}}</li>
+              {{/each}}
+            </ul>
+            <br />
+          {{/each}}
+        </ul>
+
+        <ul>
+          {{#each functions}}
+            <b>Functions :</b>
+            <br />
+            <br />
+            <li><b>Name :</b> {{name}}</li>
+            <b>Description :</b>
+            <em>{{description}}</em>
+            <br />
+            <b>Parameters :</b>
+            <br />
+            <ul>
+              {{#each parameters}}
+                <li><b>Name :</b>
+                  {{name}}
+                  <br /></li>
+                <li><b>Type :</b>
+                  {{type}}
+                  <br /></li>
+                <li><b>Description :</b>
+                  {{description}}
+                  <br />
+                </li>
+              {{/each}}
+            </ul>
+            <br />
+            <br />
+
+          {{/each}}
+        </ul>
+
+      {{/each}}
+    </ul>
+
+  {{/with}}
+
+</div>
