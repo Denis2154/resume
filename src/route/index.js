@@ -272,6 +272,11 @@ router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
     layout: 'basic',
+
+    page: {
+      title: 'Bio | Albert Einstein',
+    },
+
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
     birthplace:
@@ -367,6 +372,10 @@ router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
     layout: 'basic',
+
+    page: {
+      title: 'Person | Emma Johnson',
+    },
 
     person: {
       name: 'Emma Johnson',
@@ -472,6 +481,11 @@ router.get('/js', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
+
+    page: {
+      title: 'JavaScript',
+    },
+
     name: 'JavaScript',
     description:
       'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
