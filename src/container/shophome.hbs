@@ -1,0 +1,168 @@
+<section>
+  <div class='row'>
+      <div class='card m-3'>
+        <div class="col-12">
+        <div class='nav'>
+          {{#with navigation}}
+            <h1 class="col-7">Shop</h1>
+            {{#each links}}
+                <div class='nav-item px-0 pe-0 my-2'>
+                  <a href='{{href}}' class='nav-link'>
+                    {{text}}</a>
+                </div>
+            {{/each}}
+            <a
+              class='nav-link disabled col-1 pe-0 my-2'
+            >{{Logo}}</a>
+          {{/with}}
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="row g-4">
+  {{#with newsBlock}}
+  <h1 class="text-center">{{title}}</h1>
+      {{#each cards}}
+       <div class="col-3">
+         <div class="card m-1">
+           <div class="card-header">
+           
+           {{title}}
+           
+           {{#if isTop}}
+           <span class="bandge text-bg-danger rounded-pill">ТОП</span> 
+             {{#if idNew}} 
+             <span class="bandge text-bg-success rounded-pill">Нова</span> 
+             {{/if}} 
+           {{else}}
+            {{#if idNew}}
+            <span class="bandge text-bg-success rounded-pill">Нова</span> 
+             {{#if isTop}}
+            <span class="bandge text-bg-danger rounded-pill">ТОП</span> 
+             {{/if}} 
+            {{/if}}
+           {{/if}} 
+           
+           </div>
+         
+           <div class="card-body">
+            <p>{{description}}</p>
+               
+           </div>
+          </div>
+         </div>
+          
+      {{/each}}
+
+  {{/with}}
+  </div>
+</section>
+<hr>
+<section>
+ <div class="row">
+  
+    {{#with goodsBlock}}
+    <div class="nav nav-tabs m-1">
+      {{#each tabs}}
+      <div class="nav-item text-center col-3">        
+      
+        {{#if isActive}}
+          <a class='nav-link active py-0'>
+                    {{text}}</a>
+             {{#if isDisabled}} 
+             <a class='nav-link disabled'>
+                    {{text}}</a>
+             {{/if}} 
+           {{else}}
+            {{text}}
+           {{/if}} 
+        
+      </div>
+      {{/each}}
+      </div>
+
+  
+     
+      {{#each cards}}
+      <div class="col-4">
+      <div class="card m-1">
+               <img src="{{image}}">
+        <div class="card-body">
+        <div class="card-title">
+          
+          {{title}}
+          
+          {{#if isHot}}
+           <span class="bandge text-bg-warning rounded-pill">HOT!</span> 
+             {{#if idNew}} 
+             <span class="bandge text-bg-primary rounded-pill">Нове</span> 
+             {{/if}} 
+           {{else}}
+            {{#if idNew}}
+            <span class="bandge text-bg-primary rounded-pill">Нове</span> 
+             {{#if isHot}}
+            <span class="bandge text-bg-warning rounded-pill">HOT!</span> 
+             {{/if}} 
+            {{/if}}
+           {{/if}} 
+          
+        </div>
+        <p>{{description}}</p>
+        </div>
+        
+        </div>
+        </div>
+      
+      {{/each}}  
+    {{/with}}
+ </div>
+</section>
+<hr>
+<section>
+  {{#with subscribe}}
+  <div class="alert text-bg-dark p-1 m-1">
+    <h2 class="my-0">{{header}}</h2>
+    <div class="text-end">
+   {{#each buttons}}
+   <a href='{{link}}' class="btn btn-primary">{{text}}</a>
+   {{/each}}
+   </div>
+
+   <p>{{description}}</p>
+
+  </div>
+  {{/with}}
+</section>
+<hr>
+<section>
+  {{#with service}}
+  <div class="alert text-bg-success text-center">
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    {{#each buttons}}
+      <a href='{{link}}' class="btn btn-primary">{{text}}</a>
+    {{/each}}
+  </div>
+  {{/with}}
+</section>
+<hr>
+
+<section>
+  <div class="row">
+      {{#each footer}}
+       <div class="col-2 flex-column pe-1">
+        <ul class="nav">
+        {{#each this}}
+          <li>
+            <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+          </li>
+        {{/each}}
+        </ul>
+       </div>
+      {{/each}}
+  </div>
+</section>
