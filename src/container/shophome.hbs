@@ -25,39 +25,7 @@
 <section>
   <div class="row g-4">
   {{#with newsBlock}}
-  <h1 class="text-center">{{title}}</h1>
-      {{#each cards}}
-       <div class="col-3">
-         <div class="card m-1">
-           <div class="card-header">
-           
-           {{title}}
-           
-           {{#if isTop}}
-           <span class="bandge text-bg-danger rounded-pill">ТОП</span> 
-             {{#if idNew}} 
-             <span class="bandge text-bg-success rounded-pill">Нова</span> 
-             {{/if}} 
-           {{else}}
-            {{#if idNew}}
-            <span class="bandge text-bg-success rounded-pill">Нова</span> 
-             {{#if isTop}}
-            <span class="bandge text-bg-danger rounded-pill">ТОП</span> 
-             {{/if}} 
-            {{/if}}
-           {{/if}} 
-           
-           </div>
-         
-           <div class="card-body">
-            <p>{{description}}</p>
-               
-           </div>
-          </div>
-         </div>
-          
-      {{/each}}
-
+   {{> shoppost}}
   {{/with}}
   </div>
 </section>
