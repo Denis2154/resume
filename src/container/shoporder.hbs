@@ -1,0 +1,140 @@
+<section>
+  <div class='ms-1 my-5'>
+    <h1>{{header}}</h1>
+  </div>
+  
+  <div class='row'>
+    
+     {{#with contacts_data}}
+          
+          <div class="col-8">
+                
+                <div class="ms-1">
+                   <h2>{{title}}</h2>
+                </div>
+            
+               {{#each buttons}}
+               {{#if isPrimary}}<button
+               class='btn btn-warning ms-1'
+              >{{text}}</button>{{/if}}
+              {{#if isOutline}}<button
+              class='btn btn-outline-warning'
+              >{{text}}</button>{{/if}}
+              {{/each}}
+
+          </div>
+
+
+           <div class="col-4">
+               <div class="card">
+               {{#each ../action_block}}
+             
+               {{#if isPrimary}}
+               <button class="btn btn-success ms-1 m-1">{{text}}</button>
+              {{/if}}
+              {{#if isDanger}}
+              <button class="btn btn-danger ms-1 m-1">{{text}}</button>
+             {{/if}}
+             {{#if isInfo}}
+             <button class="btn btn-info ms-1 m-1">{{text}}</button>
+             {{/if}}
+             {{/each}}
+             </div>
+
+             {{#with ../total}}
+              <div class="card mt-2">
+               
+               <div class="card-title">
+                  {{title}}
+               </div>
+               
+               <div>
+                {{#each item_list}}
+                 <ul class="list-group">
+                  <li>
+                      {{name}} : {{price}}
+                  </li>
+                 </ul>
+                 {{/each}}
+               </div>
+              
+              </div>
+             {{/with}}
+          </div> 
+          
+           {{#with form}}
+               {{#with input}}
+                  <div class="col-4">
+                  <div class='form ms-1'>
+                  {{#with surname}}
+                  <div class='form-label'><b>{{label}}</b></div>
+                  <input
+                    class='form-control'
+                   placeholder='{{placeholder}}'
+                  />
+                  <div class='form-text'><b
+                  >{{caption}}</b></div>
+                 {{/with}} 
+                </div>
+                </div>
+
+                  <div class="col-4">
+                  <div class='form ms-1'>
+                  {{#with name}}
+                  <div class='form-label'><b>{{label}}</b></div>
+                  <input
+                    class='form-control'
+                   placeholder='{{placeholder}}'
+                  />
+                  <div class='form-text'><b
+                  >{{caption}}</b></div>
+                 {{/with}}
+                </div>
+                </div>
+        
+
+                <div class="col-4">
+                  <div class='form ms-1'>
+                  {{#with phone}}
+                  <div class='form-label'><b>{{label}}</b></div>
+                  <input
+                    class='form-control'
+                   placeholder='{{placeholder}}'
+                  />
+                  <div class='form-text'><b
+                  >{{caption}}</b></div>
+                 {{/with}}
+                 </div>
+                </div>
+
+                <div class="col-4">
+                  <div class='form'>
+                  {{#with email}}
+                  <div class='form-label'><b>{{label}}</b></div>
+                  <input
+                    class='form-control'
+                   placeholder='{{placeholder}}'
+                  />
+                  <div class='form-text'><b
+                  >{{caption}}</b></div>
+                 {{/with}}
+                 </div>
+                </div>
+           {{/with}}
+         {{/with}}    
+     
+  {{/with}}
+ </div>
+
+</section>
+<hr class='col-8' />
+<section>
+    <div class="row">
+        {{#each contacts_data.form.switch}}
+        <div class="form-check form-switch ms-1 my-4">
+        <input {{#if isActive}} checked="active" {{/if}} type="checkbox" class="form-check-input"> {{text}}
+        </div>
+        {{/each}} 
+    </div>
+</section>
+<hr class='col-8'>
