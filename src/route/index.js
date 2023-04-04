@@ -2063,13 +2063,6 @@ router.get('/shoporder', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shoporder', {
-
-router.get('/shopnews', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('shopnews', {
-
     layout: 'shop',
     navigation: {
       links: [
@@ -2090,11 +2083,9 @@ router.get('/shopnews', function (req, res) {
           text: 'Exit',
           href: null,
         },
-
       ],
       Logo: 'Logo',
     },
-
 
     header: 'Оформлення замовлення',
     contacts_data: {
@@ -2328,13 +2319,34 @@ router.get('/shopnews', function (req, res) {
         title:
           'Які з наведених нижче факторів є для вас важливими при купівлі обладнання?',
         options: [
-          'Ціна',
-          'Репутація бренду',
-          'Якість',
-          'Особливості',
-          'Гарантія',
-          'Доступність',
-          'Обслуговування клієнтів',
+          {
+            text: 'Ціна',
+            isChecked: true,
+          },
+          {
+            text: 'Репутація бренду',
+            isChecked: true,
+          },
+          {
+            text: 'Якість',
+            isChecked: false,
+          },
+          {
+            text: 'Особливості',
+            isChecked: false,
+          },
+          {
+            text: 'Гарантія',
+            isChecked: false,
+          },
+          {
+            text: 'Доступність',
+            isChecked: false,
+          },
+          {
+            text: 'Обслуговування клієнтів',
+            isChecked: false,
+          },
         ],
       },
     },
@@ -2426,7 +2438,7 @@ router.get('/shopnews', function (req, res) {
         },
       ],
     },
-    
+
     footer: [
       [
         {
