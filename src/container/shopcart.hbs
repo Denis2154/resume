@@ -1,0 +1,92 @@
+<div class='row mb-5'>
+  {{#with header}}
+    <div class='col-3 mt-5'>
+      <h1>{{title}}</h1>
+    </div>
+    {{#with button}}
+      <div class='col-9 text-end mt-5 py-2'>
+        <a
+          href='{{link}}'
+          class='btn btn-outline-secondary'
+        >{{text}}</a>
+      </div>
+    {{/with}}
+  {{/with}}
+</div>
+<hr class='mb-5' />
+{{#each goodsBlock}}
+   {{> cartGoodsItem}}
+{{/each}}
+
+<hr class='mt-5' />
+
+{{#with total}}
+  <div class='row'>
+
+    <div class='col-7 mt-4'>
+      <h2>{{title}}</h2>
+      <h2>{{amount}}</h2>
+      <div class='mb-5'>{{delivery}}</div>
+    </div>
+
+    <div class='col-5'>
+    {{#each buttons}}
+      <a href="{{link}}" class="{{#if isSuccess}}ms-5 me-1 btn btn-success mt-4{{/if}} {{#if isOutline}}btn btn-outline-success ms-5 mt-2{{/if}}">{{text}}</a><br>
+    {{/each}}
+    </div>
+
+  </div>
+{{/with}}
+
+<hr>
+
+<div class="row">
+    {{#with goodsOtherBlock}}
+    <h1 class="text-center">{{title}}</h1>
+    {{#each cards}}
+    <div class="col-4">
+      
+      <div class="card">
+        <img src="{{image}}" class="card-img-top">
+        
+        <div class="card-body">
+            <div class="card-title">
+                <b>{{title}}</b>
+                {{#if isHot}}
+                <span class="bange text-bg-warning rounded-pill">HOT!</span>
+                {{/if}}
+                {{#if idNew}}
+                <span class="bange text-bg-primary rounded-pill">Нове</span>
+                {{/if}}
+            </div>
+            <p>{{description}}</p>
+        </div>
+
+       </div>
+    </div>
+    {{/each}}
+    {{/with}}
+</div>
+
+<hr class="mt-5">
+
+<div class="row alert text-bg-dark mt-5 mb-5">
+  {{#with subscribe}}
+    
+    <div class="col-7">
+    <h2>{{header}}</h2>
+    <p>{{description}}</p>
+    </div>
+    
+    <div class="col-5 mt-3">
+    {{#each buttons}}
+      <a
+        href='{{link}}'
+        class='btn btn-primary'
+      >{{text}}</a>
+    {{/each}}
+    </div>
+
+  {{/with}}
+</div>
+<hr>
