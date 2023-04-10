@@ -1,0 +1,60 @@
+<div class='col-6'>
+  <div class='card mt-5'>
+    <img src='{{img}}' class='card-img-top' />
+    <div class='row'>
+      {{#if isHot}}
+        <span
+          class='bange ms-4 mt-2 col-3 text-center text-bg-warning rounded-pill'
+        >HOT!</span>
+      {{/if}}
+      {{#if isNew}}
+        <span
+          class='bange ms-2 mt-2 col-4 text-center text-bg-primary rounded-pill'
+        >Нове</span>
+      {{/if}}
+    </div>
+
+    {{#if isFast}}
+      <button
+        class='btn btn-success ms-2 col-9 mb-2 mt-2'
+      >Швидка доставка</button>
+    {{/if}}
+    {{#if isFree}}
+      <button
+        class='btn btn-secondary ms-2 mb-3 col-11 mt-2'
+      >Безкоштовна доставка</button>
+    {{/if}}
+
+    <b class='ms-2'>{{name}}</b>
+
+    {{#with review}}
+      <span class='ms-2 mt-2'>{{amount}} {{text}}</span>
+    {{/with}}
+
+    <h4 class='ms-2 mt-3'>{{price}}</h4>
+
+    <span class='ms-2'>{{delivery}}</span>
+
+    {{#each buttons}}
+      {{#if isPrimary}}
+        <a
+          href='{{link}}'
+          class='ms-2 mt-2 btn btn-primary col-7'
+        >{{text}}</a>
+      {{/if}}
+      {{#if isSecondary}}
+        <a
+          href='{{link}}'
+          class='ms-2 mt-2 mb-2 btn btn-secondary col-8'
+        >{{text}}</a>
+      {{/if}}
+    {{/each}}
+
+    <ul>
+      {{#each characteristics}}
+        <li>{{title}}: {{value}}</li>
+      {{/each}}
+    </ul>
+
+  </div>
+</div>
