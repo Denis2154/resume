@@ -1,0 +1,124 @@
+<div class='row'>
+
+  <div class='col-8'>
+    {{#with formBlock}}
+      <h2 class='ms-1 mt-4'>{{header}}</h2>
+
+      {{#with rating}}
+        <div class='ms-1'>{{title}}:
+          {{value}}</div>
+      {{/with}}
+
+      {{#with actionBlock}}
+        <div class='nav nav-tabs mt-2'>
+          {{#each tabs}}
+            <div class='nav item col-4 ps-1'>
+              {{#if isActive}}
+                <a
+                  class='nav-link ps-5 pe-5 active'
+                >{{text}}</a>
+              {{else}}
+                <a class='nav-link ps-4 pe-3'>{{text}}</a>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+
+        <hr class='mt-5' />
+
+        {{#with report}}
+          <div class='card mt-5'>
+            <div class='card-title m-2 pt-2 ps-2'>
+              {{title}}
+            </div>
+            {{#with button}}
+              <a
+                href='{{link}}'
+                class='btn btn-secondary col-4 mb-3 ms-3'
+              >{{text}}</a>
+            {{/with}}
+          </div>
+        {{/with}}
+
+        <hr class='mt-5' />
+
+      {{/with}}
+
+      {{#with feedbackBlock}}
+        <h3 class='mt-5 mb-5'>{{title}}</h3>
+
+        {{#each buttons}}
+          {{#if isWarning}}
+            <a
+              href='{{link}}'
+              class='btn btn-warning'
+            >{{text}}</a>
+          {{/if}}
+          {{#if isSuccess}}
+            <a
+              href='{{link}}'
+              class='btn btn-success ms-2 me-2'
+            >{{text}}</a>
+          {{/if}}
+          {{#if isDanger}}
+            <a
+              href='{{link}}'
+              class='btn btn-danger'
+            >{{text}}</a>
+          {{/if}}
+        {{/each}}
+
+      {{/with}}
+    {{/with}}
+
+  </div>
+
+  <div class='col-4'>
+
+    {{#with formBlock.goodsInfo}}
+
+      <div class='card mt-4'>
+        <img src='{{photo}}' class='col-6 pt-3 pb-2 ps-3' />
+        <b class='ps-3 pb-2'>{{name}}</b>
+      </div>
+
+      <div class='card mt-2'>
+        <b class='ps-3 pt-3 pb-2'>{{price}}</b>
+        {{#each buttons}}
+          {{#if isPrimary}}
+            <a
+              href='{{link}}'
+              class='btn btn-primary col-5 ms-3 mb-2'
+            >{{text}}</a>
+          {{/if}}
+          {{#if isSecondary}}
+            <a
+              href='{{link}}'
+              class='btn btn-secondary col-8 ms-3 mb-2'
+            >{{text}}</a>
+          {{/if}}
+        {{/each}}
+      </div>
+
+      <div class='card mt-2'>
+        <div class='row'>
+          {{#with seller}}
+            <div class='m-3'>{{title}}:
+              <b>{{value}}</b></div>
+          {{/with}}
+        </div>
+      </div>
+    {{/with}}
+  </div>
+
+</div>
+
+<hr class='mt-5' />
+
+   {{> reviewItem}}
+
+    <div class="mt-5 mb-5">
+    {{> shopaction}}
+    </div>
+
+    <hr>
