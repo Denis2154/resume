@@ -6,9 +6,15 @@
 <div>
   {{#with main}}
   <main>
+
+    <div class="card">
+
+      <div class="card-header">
+        {{> title data="All skills" big=true}}
+      </div>
     
-    {{> title data="All skills" big=true}}
-    
+
+    <div class="card-body">
     <section>
       <ul>
         {{#each skills}}
@@ -26,11 +32,18 @@
         {{/each}}
       </ul>
     </section>
+    </div>
 
-    {{> title data="My hobbies" big=false}}
+    </div>
 
-    <section>
-      <ol>
+
+    <div class="card mt-2">
+      <div class="card-header">
+       {{> title data="My hobbies" big=false}}
+      </div>
+      <div class="card-body">
+       <section>
+        <ol>
         {{#each hobbies}}
           <li>
            {{name}}
@@ -39,11 +52,11 @@
            
           </li>
         {{/each}}
-      </ol>
+        </ol>
+       </section>
+      </div>
 
-
-
-    </section>
+    </div>
 
   </main>
   {{/with}}
