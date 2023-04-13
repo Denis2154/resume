@@ -7,6 +7,7 @@
   {{#with main}}
   <main>
 
+
     <div class="card">
     
     <section class="mb-3">
@@ -19,9 +20,27 @@
       
       <div class="card-body">
         <p>
+
+      
+      <div class="card">
+        
+        <section class="mb-3">
+         
+         <div class="card-header">
+          {{> title data=summary.title big=true}}
+         </div>
+         
+         <div class="card-body">
+          <p>
+
           {{summary.text}}
-        </p>
+          </p>
+         </div>
+
+        </section>
+
       </div>
+
     
     </section>
     
@@ -29,6 +48,9 @@
     
     <div class="card mt-2">
 
+
+
+    <div class="card mt-2">
     {{#with experience}}
     <section>
       
@@ -45,7 +67,12 @@
     </section>
     {{/with}}
 
+
     </div>
+
+    </div>
+
+
   </main>
   {{/with}}
 
