@@ -1,0 +1,111 @@
+<section>
+  <div class='breadcrumb m-3'>
+    {{#each breadcrumb}}
+      <a href='{{url}}' class='breadcrumb-item {{#unless url}}active{{/unless}}'>{{name}}</a>
+    {{/each}}
+  </div>
+</section>
+
+<h1 class="m-3 mt-5">{{header}}</h1>
+
+<div class="row">
+{{#each sortBlock}}
+  <div class="col-3">
+  <select class="form-select mt-3">
+   <option selected disabled hidden>{{placeholder}}</option>
+     {{#each options}}
+    <option value="{{value}}">{{text}}</option>
+     {{/each}}
+   </select>
+  </div>
+{{/each}}
+</div>
+
+{{#with filterBlock}}
+<div class="row">
+    
+    <div class="col-4">
+     
+      <div class="card mt-5 pb-2">
+        
+        {{#with sellers}}
+         <div class="m-2">{{title}}</div>
+         {{#each list}}
+         <div class="form-check ms-2">
+            <input class="form-check-input" type="checkbox">{{value}}
+         </div>
+         {{/each}}
+        {{/with}}
+        
+        <hr>
+        
+        {{#with brands}}
+           <div class="form m-2">
+            <label class="form-label m-2">{{title}}</label>
+            {{#with input}}
+            <input placeholder="{{placeholder}}" class="form-control">
+            {{/with}}
+           </div>
+           {{#each options}}
+           <div class="form-check ms-2">
+            <input class="form-check-input" type="checkbox">{{value}}
+           </div>
+           {{/each}}
+        {{/with}}
+
+        <hr>
+
+        {{#with price}}
+        <div class="form m-2">
+           <label class="form-check-label">{{title}}</label>
+           <input placeholder="{{range.from}}" class="form-control mt-2">
+           <input placeholder="{{range.to}}" class="form-control mt-2">
+        </div>
+         {{#with button}}
+          <a href="{{link}}" class="btn btn-outline-secondary col-3 m-2">{{text}}</a>
+         {{/with}}
+        {{/with}}
+
+        <hr>
+
+        
+        {{#each filterList}}
+        <label class="form-check-label">{{title}}</label>
+          {{#each options}}
+          <div class="form-check ms-2">
+            <input class="form-check-input" type="checkbox">{{value}}
+          </div>
+          {{/each}}
+          {{#if @last}}
+          {{else}}
+          <hr>
+          {{/if}}
+        {{/each}}
+        
+      
+      </div>
+    
+    </div>
+    {{/with}}
+    
+    
+    
+    <div class="col-8">
+         
+          <div class="row">
+            {{#each goodsList}}
+              {{> catalogItem}}
+            {{/each}}
+
+          </div>
+
+    </div>
+
+
+</div>
+
+<div class="mt-5 mb-5">
+{{> shopaction}}
+</div>
+
+<hr>
