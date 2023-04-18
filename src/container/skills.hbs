@@ -3,21 +3,11 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div class="row">
   {{#with main}}
   <main>
 
     <div class="card">
       
-      <div class="card-header">
-        {{> title data="All skills" big=true}} 
-      </div>
-    
-      <div class="card-body">
-      <section>
-
-
-    <div class="card">
       <div class="card-header">
         {{> title data="All skills" big=true}}
       </div>
@@ -41,45 +31,24 @@
           </ul>
         </section>
       </div>
+
     </div>
 
     <div class="card mt-2">
-
-    <div class="card-header">
-
-
-
-    </div>
-
-
-    </div>
-
-    <div class="card-body">
-    <section>
-      <ol>
-
-
-    <div class="card mt-2">
+      
       <div class="card-header">
        {{> title data="My hobbies" big=false}}
       </div>
+      
       <div class="card-body">
-       <section>
         <ol>
-
         {{#each hobbies}}
           <li>
            {{name}}
            {{#if isMain includeZero=true}} (Favourite) {{/if}} 
           </li>
         {{/each}}
-
-      </ol>
-    </section>
-    </div>
-
         </ol>
-       </section>
       </div>
 
     </div>
