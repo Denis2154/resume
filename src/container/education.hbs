@@ -1,55 +1,40 @@
-<div>
   {{#with main}}
   <main>
-
-    <div class="card">
-    
+    <div class="card"> 
      <div class="card-header">
      {{> title data="My educations" big=true}}
      </div>
 
-    <div class="card-body">
-    <section>
-     
-      <ul>
+     <div class="card-body">
+      <section>
+        <ul>
         {{#each educations}}
         <li>
-          {{name}}
-          
-          {{#unless isEnd includeZero=true}} (ще в процесі) {{/unless}}
-         
+          {{name}}  
+          {{#unless isEnd includeZero=true}} (ще в процесі) {{/unless}}    
         </li>
         {{/each}}
-      </ul>
-    
-    </section>
-    </div>
-
+        </ul>
+      </section>
+     </div>
     </div>
 
     <div class="card mt-2">
- 
-    <div class="card-header">
-    {{> title data="My certificates" big=false}}
-    </div>
+     <div class="card-header">
+     {{> title data="My certificates" big=false}}
+     </div>
 
-    <div class="card-body">
-    <section>
-       
-        <ul>
+     <div class="card-body">
+      <section>
+       <ul>
           {{#each certificates}}
           <li>
             {{name}} ({{id}})
           </li>
           {{/each}}
-        </ul>
-
-    </section>
+       </ul>
+      </section>
+     </div>
     </div>
-
-    </div>
-
-
   </main>
   {{/with}}
-</div>
